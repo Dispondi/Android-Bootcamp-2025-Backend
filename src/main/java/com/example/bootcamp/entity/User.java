@@ -40,7 +40,7 @@ public class User implements UserDetails {
     private boolean statusWork;
 
     @ManyToOne
-    @JoinColumn(name = "center_id", nullable = false)
+    @JoinColumn(name = "center_id")
     private VolunteerCenter volunteerCenter;
 
     @ManyToMany(fetch = FetchType.EAGER)

@@ -30,7 +30,7 @@
             </column>
             <column name="status_work" type="BOOLEAN" defaultValue="false"> </column>
             <column name="center_id" type="BIGINT">
-                <constraints nullable="false"
+                <constraints nullable="true"
                              foreignKeyName="fk_users_volunteerCenters"
                              referencedTableName="volunteer_centers"
                              referencedColumnNames="id"/>

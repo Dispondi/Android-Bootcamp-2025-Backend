@@ -6,6 +6,7 @@ import com.example.bootcamp.entity.User;
 import com.example.bootcamp.entity.VolunteerCenter;
 import lombok.experimental.UtilityClass;
 
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @UtilityClass
@@ -20,7 +21,11 @@ public class ConverterDTO {
         dto.setAbout(user.getAbout());
         dto.setPassword(user.getPassword());
         dto.setStatusWork(user.isStatusWork());
-        dto.setCenterName(user.getVolunteerCenter().getName());
+
+        VolunteerCenter center = user.getVolunteerCenter();
+        if (center != null) dto.setCenterName(center.getName());
+        else dto.setCenterName("Нет");
+
         return dto;
     }
 
